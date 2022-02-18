@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/javahometech/simple-app';
+                    git 'https://github.com/syju/maven_repo.git';
                 }
             }
         }
