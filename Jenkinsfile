@@ -11,9 +11,9 @@ pipeline {
     stages {
         stage("clone code") {
             steps {
-                script {
-                    // Let's clone the source
-                  sh  'git clone https://github.com/syju/maven_repo.git'
+                echo 'clone the repo'
+                sh 'rm -rf maven_repo'
+                sh  'git clone https://github.com/syju/maven_repo.git'
                 }
             }
         }
