@@ -11,9 +11,10 @@ pipeline {
     stages {
         stage("clone code") {
             steps {
-                echo 'clone the repo'
-                sh 'rm -rf maven_repo'
-                sh  'git clone https://github.com/syju/maven_repo.git'
+                script {
+                    // Let's clone the source
+                    git 'https://github.com/javahometech/simple-app';
+                }
             }
         }
 
@@ -43,10 +44,10 @@ pipeline {
                 ], 
                 credentialsId: 'nexus-credentials', 
                 groupId: 'in.javahome', 
-                nexusUrl: '18.236.183.77:8081', 
+                nexusUrl: 'http://18.236.183.77:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: 'maven-nexus-repo', 
+                repository: 'http://18.236.183.77:8081/repository/simple-app-release/', 
                 version: '${mavenPom.version}'
 
                 }
