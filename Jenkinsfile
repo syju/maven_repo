@@ -14,7 +14,6 @@ pipeline {
                 echo 'clone the repo'
                 sh 'rm -rf maven_repo'
                 sh  'git clone https://github.com/syju/maven_repo.git'
-                }
             }
         }
 
